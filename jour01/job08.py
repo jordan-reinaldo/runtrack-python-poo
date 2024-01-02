@@ -20,7 +20,12 @@ class Cercle :
         print(f"la circonference est {self.circonference()}")
         print(f"le diametre est {self.diametre()}")
 
-cercle1 = Cercle(5)
+cercle1 = Cercle(4)
 cercle1.afficherInfos()
 cercle1.changerRayon(10)
 cercle1.afficherInfos()
+
+cercle2 = Cercle(7)
+cercle2.afficherInfos()
+cercle2.changerRayon(12)
+cercle2.afficherInfos()
