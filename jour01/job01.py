@@ -3,4 +3,5 @@ class Operation:
         self.nombre1 = nombre1
         self.nombre2 = nombre2
 
-print(Operation(10, 12))
+exemple = Operation(10, 12)
+print(exemple)
