@@ -8,6 +8,7 @@ class Commande:
         "Tiramisu": 7.5,
         "Eau": 1.5,
         "Café": 1.0,
+        "Thé": 1.0,
     }
 
     def __init__(self, numero_commande):
