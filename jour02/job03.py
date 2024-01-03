@@ -13,19 +13,19 @@ class Livre:
     def get_titre(self):
         return self.__titre
     
-    def __set_titre__(self, nouveau_titre): 
+    def _set_titre(self, nouveau_titre): 
         self.__titre = nouveau_titre
     
     def get_auteur(self):
         return self.__auteur
     
-    def __set_auteur__(self, nouveau_auteur):  
+    def _et_auteur(self, nouveau_auteur):  
         self.__auteur = nouveau_auteur 
     
     def get_pages(self):
         return self.__pages
     
-    def __set_pages__(self, pages):
+    def _set_pages(self, pages):
         if isinstance(pages, int) and pages > 0: #vérifie si la variable pages est une instance de la classe int (si c'est un entier)
             self.__pages = pages
         else:
@@ -34,18 +34,18 @@ class Livre:
     def afficher(self):
         print(f"Titre: {self.__titre}, Auteur: {self.__auteur}, Pages: {self.__pages}")
 
-    def __vérification__(self):
+    def _vérification(self):
         return self.__disponible
 
     def emprunter(self):
-        if self.__vérification__():  
+        if self._vérification():  
             self.__disponible = False
             print("Le livre a été emprunté.")
         else:
             print("Le livre n'est pas disponible car il a déjà été emprunté.")
 
     def rendre(self):
-        if not self.__vérification__():  
+        if not self._vérification():  
             self.__disponible = True
             print("Le livre a été rendu.")
         else:

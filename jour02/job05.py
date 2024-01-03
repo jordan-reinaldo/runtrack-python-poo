@@ -10,25 +10,25 @@ class Voiture:
     def get_marque(self):
         return self.__marque
     
-    def __set_marque__(self, marque):
+    def _set_marque(self, marque):
         self.__marque = marque
     
     def get_modele(self):
         return self.__modele
 
-    def __set_modele__(self, modele):
+    def _set_modele(self, modele):
         self.__modele = modele
     
     def get_annee(self):
         return self.__annee
     
-    def __set_annee__(self, annee):
+    def _set_annee(self, annee):
         self.__annee = annee
     
     def get_kilometrage(self):
         return self.__kilometrage
     
-    def __set_kilometrage__(self, kilometrage):
+    def _set_kilometrage(self, kilometrage):
         self.__kilometrage = kilometrage
 
     def demarrer(self):
