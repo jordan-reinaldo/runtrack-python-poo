@@ -6,13 +6,13 @@ class Rectangle:
     def get_longueur(self):
         return self.__longueur
 
-    def set_longueur(self, nouvelle_longueur):
+    def __set_longueur__(self, nouvelle_longueur):
         self.__longueur = nouvelle_longueur
 
     def get_largeur(self):
         return self.__largeur
 
-    def set_largeur(self, nouvelle_largeur):
+    def __set_largeur__(self, nouvelle_largeur):
         self.__largeur = nouvelle_largeur
 
     def afficher(self):
@@ -20,6 +20,6 @@ class Rectangle:
 
 rectangle1 = Rectangle(10, 5)
 rectangle1.afficher()
-rectangle1.set_longueur(20)
-rectangle1.set_largeur(10)
+rectangle1.__set_longueur__(20)
+rectangle1.__set_largeur__(10)
 rectangle1.afficher()

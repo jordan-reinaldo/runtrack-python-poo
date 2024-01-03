@@ -8,6 +8,7 @@ class Livre:
         else:
             print("Erreur : Le nombre de pages doit être un entier positif.")
             self.__pages = "nombre de pages incorrect"
+        self.__disponible = True
 
     def get_titre(self):
         return self.__titre
@@ -33,9 +34,26 @@ class Livre:
     def afficher(self):
         print(f"Titre: {self.__titre}, Auteur: {self.__auteur}, Pages: {self.__pages}")
 
+    def __vérification__(self):
+        return self.__disponible
+
+    def emprunter(self):
+        if self.__vérification__():  
+            self.__disponible = False
+            print("Le livre a été emprunté.")
+        else:
+            print("Le livre n'est pas disponible car il a déjà été emprunté.")
+
+    def rendre(self):
+        if not self.__vérification__():  
+            self.__disponible = True
+            print("Le livre a été rendu.")
+        else:
+            print("Le livre n'a pas été emprunté.")
+
 livre1 = Livre("Victor Hugo", "Les Misérables", 1488)
 livre1.afficher()
-livre1.__set_titre__("Harry Potter")
-livre1.__set_auteur__("J.K. Rowling")
-livre1.__set_pages__(500)
-livre1.afficher()
+livre1.emprunter()
+livre1.rendre()
+livre1.emprunter()
+livre1.emprunter()
