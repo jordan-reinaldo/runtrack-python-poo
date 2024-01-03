@@ -7,6 +7,7 @@ class Commande:
         "Salade César": 10.0,
         "Tiramisu": 7.5,
         "Eau": 1.5,
+        "Café": 1.0,
     }
 
     def __init__(self, numero_commande):
@@ -34,6 +35,10 @@ class Commande:
     def __calculer_total(self):
         return sum(Commande.menu[plat] * quantite for plat, quantite in self.__plats_commandes.items())
 
+    def __calculer_TVA(self, taux_tva):
+        total = self.__calculer_total()
+        return total * taux_tva / 100
+
     def afficher_commande(self):
         total = self.__calculer_total()
         print(f"Commande N°{self.__numero_commande}")
@@ -42,11 +47,9 @@ class Commande:
             prix = Commande.menu[plat]
             print(f"{plat}: {prix}€ x {quantite}")
         print(f"Total à payer: {total}€")
-        print(f"TVA : {commande.calculer_TVA(10)}€")
+        print(f"TVA : {commande.__calculer_TVA(10)}€")
 
-    def calculer_TVA(self, taux_tva):
-        total = self.__calculer_total()
-        return total * taux_tva / 100
+    
 
 commande = Commande(1)
 commande.ajouter_plat("Pizza Armenienne", 2)
