@@ -35,6 +35,12 @@ class Jeu:
         if self.__niveau not in ["facile", "moyen", "difficile"]:
             print("Erreur : niveau non reconnu.")
             self.choisirNiveau()
+    
+    def verifieVictoire(self, joueur, ennemi):
+        if joueur.get_vie() > 0:
+            print(f"{joueur.get_nom()} a gagné !")
+        else:
+            print(f"{ennemi.get_nom()} a gagné !")
 
     def lancerJeu(self):
         if self.__niveau == "facile":
@@ -60,10 +66,8 @@ class Jeu:
             print(f"{joueur.get_nom()} a {joueur.get_vie()} points de vie.")
             print(f"{ennemi.get_nom()} a {ennemi.get_vie()} points de vie.")
 
-        if joueur.get_vie() > 0:
-            print(f"{joueur.get_nom()} a gagné !")
-        else:
-            print(f"{ennemi.get_nom()} a gagné !")
+        self.verifieVictoire(joueur, ennemi)
+        
 
 jeu = Jeu()
 jeu.choisirNiveau()
