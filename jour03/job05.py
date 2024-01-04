@@ -35,6 +35,15 @@ class Jeu:
         if self.__niveau not in ["facile", "moyen", "difficile"]:
             print("Erreur : niveau non reconnu.")
             self.choisirNiveau()
+
+    def verifieVie(self, joueur, ennemi):
+        while joueur.get_vie() > 0 and ennemi.get_vie() > 0:
+            joueur.attaquer(ennemi)
+            if ennemi.get_vie() > 0:
+                ennemi.attaquer(joueur)
+
+            print(f"{joueur.get_nom()} a {joueur.get_vie()} points de vie.")
+            print(f"{ennemi.get_nom()} a {ennemi.get_vie()} points de vie.")
     
     def verifieVictoire(self, joueur, ennemi):
         if joueur.get_vie() > 0:
@@ -58,14 +67,7 @@ class Jeu:
         joueur = Personnage("Goku", vie_joueur)
         ennemi = Personnage("Vegeta", vie_ennemi)
 
-        while joueur.get_vie() > 0 and ennemi.get_vie() > 0:
-            joueur.attaquer(ennemi)
-            if ennemi.get_vie() > 0:
-                ennemi.attaquer(joueur)
-
-            print(f"{joueur.get_nom()} a {joueur.get_vie()} points de vie.")
-            print(f"{ennemi.get_nom()} a {ennemi.get_vie()} points de vie.")
-
+        self.verifieVie(joueur, ennemi)
         self.verifieVictoire(joueur, ennemi)
         
 
