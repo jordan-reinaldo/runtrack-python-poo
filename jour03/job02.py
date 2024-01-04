@@ -53,7 +53,7 @@ class CompteBancaire:
             print("Erreur : Le montant doit être supérieur à 0.")
 
     def agios(self, taux):
-        self.__solde -= self.__solde * taux / 100
+        self.__solde += self.__solde * taux / 100
         self.afficherSolde()
  
 
@@ -83,5 +83,5 @@ compte1.afficher()
 compte2 = CompteBancaire(987654321, "Zinedine", "Zidan", -500)
 compte2.afficher()
 compte2.agios(10)
-compte1.virement(450, compte2)
+compte1.virement(550, compte2)
 compte2.afficher()
