@@ -26,6 +26,6 @@ class Rectangle(Forme):
         self.aire =  self.__hauteur * self.__largeur
         return self.aire
 
-rectangle1 = Rectangle(10, 5)
+rectangle1 = Rectangle(12, 7)
 
 print(f"L'aire du rectangle est : {rectangle1.aire()}")
